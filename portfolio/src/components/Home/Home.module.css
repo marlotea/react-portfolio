@@ -1,0 +1,167 @@
+@import "../../vars.css";
+
+.container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 49px;
+    z-index: 1;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 10%;
+    max-height: 90vh;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    color: var(--color-text);
+    z-index: 1;
+    margin-right: 40px;
+}
+
+.title {
+    font-size: 72px;
+    font-weight: 900;
+    margin-bottom: 17px;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary) 0%,
+        var(--color-secondary) 100%
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.description {
+    front-size: 24px;
+    margin: 17px 0px;
+}
+
+.icons {
+    margin-top: 20px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    width: 10%;
+    gap: 5px;
+}
+
+.icon {
+    height: 24px;
+    width: 24px;
+}
+
+.headshot {
+    height: 302px;
+    width: 261px;
+    z-index: 1;
+
+    animation-name: floating;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+
+@keyframes floating {
+    0% {
+        transform: translate(0, 0px);
+    }
+    50% {
+        transform: translate(0, 10px);
+    }
+    100% {
+        transform: translate(0, 0px);
+    }
+}
+
+.topBlur {
+    position: absolute;
+    width: 50vw;
+    height: 50vh;
+    min-width: 350px;
+    min-height: 350px;
+    top: -128px;
+    left: -10vw;
+    border: 764px;
+    border-radius: 764px;
+    background: var(--color-primary);
+    filter: blur(100px);
+    z-index: 0;
+}
+
+.bottomBlur {
+    position: absolute;
+    width: 70vw;
+    height: 50vh;
+    min-width: 250px;
+    min-height: 350px;
+    top: 246px;
+    right: -25vw;
+    border: 764px;
+    border-radius: 764px;
+    background: var(--color-primary);
+    filter: blur(100px);
+    z-index: 0;
+}
+
+@media screen and (max-width: 830px) {
+    .container {
+        flex-direction: column-reverse;
+    }
+
+    .content {
+        align-items: center;
+    }
+}
+
+.green1 {
+    color: #3e8055;
+}
+
+.green2 {
+    color: #88d1a1;
+}
+
+.green3 {
+    color: #85b560;
+}
+
+.rotatingText {
+    display: flex;
+    flex-direction: row;
+    font-family: Lato, sans-serif;
+    font-weight: 600;
+    font-size: 36px;
+    color: white;
+    transform: translateX(-80px);
+
+    p {
+        display: inline-flex;
+        margin: 0;
+        vertical-align: top;
+
+        .word {
+            position: absolute;
+            display: flex;
+            opacity: 0;
+
+            .letter {
+                transform-origin: center center 25px;
+
+                &.out {
+                    transform: rotateX(90deg);
+                    transition: 0.32s cubic-bezier(0.6, 0, 0.7, 0.2);
+                }
+                &.in {
+                    transition: 0.38s ease;
+                }
+                &.behind {
+                    transform: rotateX(-90deg);
+                }
+            }
+        }
+    }
+}

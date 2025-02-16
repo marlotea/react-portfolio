@@ -1,0 +1,72 @@
+@import "../../vars.css";
+
+.container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+    padding: 5% 10%;
+}
+
+.intro {
+    font-size: 30px;
+    width: 11ch;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    border-right: 3px solid transparent;
+}
+
+.section {
+    margin: 15px;
+}
+
+.list {
+    display: block !important;
+    padding-left: 20px;
+}
+
+.grey_text {
+    color: darkgray;
+}
+
+.subsectionHeader {
+    margin: 3px;
+    font-size: 20px;
+    background: linear-gradient(
+        90deg,
+        var(--color-primary) 0%,
+        var(--color-secondary) 100%
+    );
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.typingWrapper {
+    height: 80vh;
+    /*This part is important for centering*/
+    display: grid;
+    place-items: center;
+    font-size: 30px;
+    width: 11ch;
+    margin: 0px 10px;
+}
+
+.typing {
+    animation: typing 2s steps(11) forwards,
+        blink 0.5s step-end infinite alternate;
+    border-right: 3px solid;
+}
+
+@keyframes typing {
+    from {
+        width: 0;
+    }
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}

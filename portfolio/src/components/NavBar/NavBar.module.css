@@ -1,0 +1,95 @@
+@import "../../vars.css";
+
+.navbar {
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    margin-top: 30px;
+    z-index: 1000;
+    padding: 5px;
+    border-radius: 100px;
+    background-color: rgba(174, 196, 193, 0.5);
+    border: 1px solid rgb(210, 230, 227);
+}
+
+.menu {
+    display: flex;
+    background-color: rgba(246, 246, 246, 0.95);
+    border-radius: 100px;
+    padding: 10px 5px;
+    justify-content: center;
+}
+
+.menuItems {
+    display: flex;
+    list-style: none;
+    z-index: 2;
+}
+
+.menuItems a {
+    font-size: 16px;
+    color: var(--color-text);
+    text-decoration: none;
+}
+
+.menuItem {
+    background-color: rgba(0, 0, 0, 0);
+    border-radius: 100px;
+    padding: 6px 15px;
+    z-index: 3;
+}
+
+.menuBtn {
+    display: none;
+    width: 30px;
+}
+
+.indicator {
+    position: absolute;
+    bottom: 9px;
+    height: 35px;
+    background-color: rgba(174, 196, 193, 0.5);
+    transition: left 0.3s ease-in-out, width 0.3s ease-in-out;
+    border-radius: 100px;
+    z-index: 1;
+}
+
+@media screen and (max-width: 830px) {
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .menu {
+        position: absolute;
+        top: 100%;
+        right: 0%;
+        margin-right: 10%;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 11px;
+        z-index: 3;
+    }
+
+    .menuBtn {
+        display: block;
+        cursor: pointer;
+    }
+
+    .menuItems {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        gap: 13px;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.1);
+        padding: 24px 33px;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .menuOpen {
+        display: flex;
+        z-index: 1;
+    }
+}

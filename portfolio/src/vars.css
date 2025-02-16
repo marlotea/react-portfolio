@@ -1,0 +1,11 @@
+:root {
+    /* Colours */
+    --color-text: #000000;
+    --color-primary: #63857f;
+    --color-secondary: #aec4c1;
+    --color-dark: #160f5e;
+    --color-bg: #fff;
+
+    /* Fonts */
+    --font-kaisei: "Kaisei Decol", serif;
+}
